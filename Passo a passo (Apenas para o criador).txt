@@ -1,6 +1,6 @@
 Perfeito, Wandersón! Agora vamos montar um **passo a passo detalhado** para o criador seguir no desenvolvimento da sua própria engine em C++. Esse guia está dividido em **fases**, cada uma com objetivos claros, conteúdos a estudar e tarefas práticas. Assim você terá um caminho estruturado para evoluir de forma consistente.
 
----
+--
 
 ## 🏗️ Passo a Passo para Criar a Engine
 
