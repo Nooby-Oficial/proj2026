@@ -1,0 +1,85 @@
+Boa, Wandersón! Vamos esclarecer o papel das branches **main** e **dev** no fluxo de trabalho do Git/GitHub, especialmente para organizar sua engine.
+
+---
+
+## 🔎 Diferença entre `main` e `dev`
+
+- **Branch `main`**  
+  - É a **linha principal** do projeto.  
+  - Deve conter apenas código estável e pronto para ser usado ou publicado.  
+  - Funciona como a versão oficial da sua engine.  
+  - Normalmente, não se faz desenvolvimento direto nela para evitar quebrar o projeto.
+
+- **Branch `dev`**  
+  - É a **linha de desenvolvimento**.  
+  - Serve para testar novas ideias, implementar recursos e corrigir bugs antes de integrar na `main`.  
+  - Pode receber várias alterações experimentais.  
+  - Depois que tudo estiver funcionando, você faz um **merge** da `dev` na `main`.
+
+---
+
+## ✅ Vantagens de usar `main` e `dev`
+- Mantém o projeto organizado.  
+- Evita que código instável vá direto para a versão principal.  
+- Facilita colaboração (cada pessoa pode criar branches a partir de `dev` para trabalhar em features específicas).  
+- Dá segurança: se algo quebrar em `dev`, a `main` continua funcionando.
+
+---
+
+## 🚀 Fluxo de trabalho recomendado
+1. **Criar branch de desenvolvimento**  
+   ```bash
+   git checkout -b dev
+   ```
+2. **Trabalhar na `dev`**  
+   - Fazer commits e pushes normalmente.  
+   - Testar novas funcionalidades.  
+3. **Integrar na `main`**  
+   - Quando estiver estável:
+     ```bash
+     git checkout main
+     git merge dev
+     git push
+     ```
+   - Assim, a `main` recebe apenas código validado.
+
+---
+
+👉 Em resumo:  
+- **`main` = versão oficial e estável da engine.**  
+- **`dev` = espaço para desenvolvimento e testes.**  
+- Você trabalha na `dev` e só leva para a `main` quando estiver pronto.  
+
+Quer que eu monte um **fluxo completo com mais branches (feature, hotfix, release)** para deixar sua engine ainda mais profissional e organizada?
+
+Exatamente, Wandersón! Mesmo depois de você subir a versão oficial na **branch `main`**, a **branch `dev`** continua existindo e pode ser usada normalmente.  
+
+---
+
+## 🔎 Como funciona na prática
+- **`main`**: guarda o código estável, pronto para ser usado ou publicado.  
+- **`dev`**: continua sendo o espaço de desenvolvimento, onde você pode testar novas ideias e recursos.  
+- Quando você faz o **merge** da `dev` na `main`, isso não apaga a `dev`. Ela permanece disponível para receber novos commits.  
+- Você pode continuar trabalhando na `dev`, criar novas features e depois integrar novamente na `main`.  
+
+---
+
+## ✅ Fluxo típico
+1. Trabalhar na `dev` → implementar novas funcionalidades.  
+2. Testar e validar.  
+3. Fazer merge na `main` → atualizar a versão oficial.  
+4. Continuar usando `dev` para novos desenvolvimentos.  
+
+---
+
+## 🚀 Vantagem
+Esse modelo garante que:
+- A **main** sempre tenha uma versão estável.  
+- A **dev** seja um espaço contínuo de evolução.  
+- Você possa repetir o ciclo quantas vezes quiser (dev → main → dev).  
+
+---
+
+👉 Em resumo: sim, mesmo depois de subir a versão oficial na `main`, você continua usando a `dev` normalmente para novos desenvolvimentos.  
+
+Quer que eu monte um **fluxo visual (tipo mapa de branches)** mostrando como `main`, `dev` e futuras `feature` branches se conectam? Isso ajuda a visualizar melhor o ciclo.
