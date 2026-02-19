@@ -83,3 +83,80 @@ Esse modelo garante que:
 👉 Em resumo: sim, mesmo depois de subir a versão oficial na `main`, você continua usando a `dev` normalmente para novos desenvolvimentos.  
 
 Quer que eu monte um **fluxo visual (tipo mapa de branches)** mostrando como `main`, `dev` e futuras `feature` branches se conectam? Isso ajuda a visualizar melhor o ciclo.
+
+Ótima pergunta, Wandersón! Vamos montar um **passo a passo claro** para você enviar alterações tanto para a branch **dev** quanto para a **main** no Git/GitHub. Assim você mantém sua engine organizada e profissional.
+
+---
+
+## 🚀 Passo a passo para trabalhar com `dev` e `main`
+
+### 🔹 1. Criar e usar a branch `dev`
+Se ainda não existir:
+```bash
+git checkout -b dev
+```
+Isso cria e muda para a branch `dev`.
+
+Se já existir:
+```bash
+git checkout dev
+```
+
+Agora você está na branch de desenvolvimento.
+
+---
+
+### 🔹 2. Fazer alterações na `dev`
+1. Edite ou crie arquivos no projeto.  
+2. Adicione ao Git:
+   ```bash
+   git add .
+   ```
+3. Faça o commit:
+   ```bash
+   git commit -m "descrição das alterações"
+   ```
+4. Envie para o GitHub:
+   ```bash
+   git push origin dev
+   ```
+
+👉 Nesse ponto, suas mudanças estão na branch `dev` no GitHub.
+
+---
+
+### 🔹 3. Revisar e integrar na `main`
+Quando o código estiver estável e pronto para virar oficial:
+
+1. Volte para a branch principal:
+   ```bash
+   git checkout main
+   ```
+2. Traga as alterações da `dev`:
+   ```bash
+   git merge dev
+   ```
+3. Envie para o GitHub:
+   ```bash
+   git push origin main
+   ```
+
+👉 Agora a branch `main` está atualizada com o que foi desenvolvido em `dev`.
+
+---
+
+### 🔹 4. Ciclo contínuo
+- Continue trabalhando na `dev` para novas features.  
+- Quando estiver pronto, faça merge novamente na `main`.  
+- Esse ciclo pode se repetir quantas vezes quiser.
+
+---
+
+## 📌 Resumindo
+- **`dev`** → onde você desenvolve e testa.  
+- **`main`** → onde fica a versão oficial e estável.  
+- Fluxo: editar → commit → push na `dev` → merge na `main` → push na `main`.  
+
+---
+
+👉 Quer que eu monte um **fluxo visual estilo diagrama** mostrando como `dev` e `main` se conectam, junto com possíveis branches de `feature` e `hotfix`? Isso ajuda a visualizar melhor o ciclo de trabalho.
